@@ -1,0 +1,56 @@
+header {
+  width: 100%;
+  background-color: #e79652;
+}
+
+header > div {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+header h1 {
+  margin: 0;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 38px;
+}
+
+header nav {
+  height: 60px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  background-color: #f1d736;
+  font-size: 20px;
+}
+
+header nav ol {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 380px) {
+  header nav ol {
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 600px) {
+  header nav ol {
+    display: block;
+  }
+  header nav li {
+    margin-right: 30px;
+  }
+}
+
+header nav li {
+  display: inline;
+}
+
+header nav a {
+  color: inherit;
+}
