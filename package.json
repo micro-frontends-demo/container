@@ -1,0 +1,14 @@
+{
+  "name": "@micro-frontends-demo/wrapper",
+  "version": "1.0.0",
+  "description": "Entry point and wrapper application for a micro frontends demo",
+  "repository": "git@github.com:micro-frontends-demo/wrapper",
+  "author": "Cam Jackson <camjackson89@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "serve"
+  },
+  "devDependencies": {
+    "serve": "^6.5.2"
+  }
+}
