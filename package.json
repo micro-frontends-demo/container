@@ -6,7 +6,7 @@
   "author": "Cam Jackson <camjackson89@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "serve"
+    "start": "serve --port 5000"
   },
   "devDependencies": {
     "serve": "^6.5.2"
