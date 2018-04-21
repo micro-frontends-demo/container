@@ -3,6 +3,13 @@ header {
   background-color: #e79652;
 }
 
+header .center-column {
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 header > div {
   padding: 0 10px;
   display: flex;

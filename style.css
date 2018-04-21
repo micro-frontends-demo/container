@@ -13,13 +13,12 @@ html, body {
 body {
   background-color: #f3f3de;
   color: #2b2318;
+  display: flex;
+  flex-direction: column;
 }
 
-.center-column {
-  width: 100%;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+main {
+  flex: 1;
 }
 
 /*
