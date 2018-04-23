@@ -22,5 +22,15 @@
     </header>
     <main id="container"></main>
     <script src="http://localhost:3000/static/js/bundle.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      function tryRender() {
+        if (window.renderBrowseMicrofrontend) {
+          window.renderBrowseMicrofrontend('container');
+        } else {
+          setTimeout(tryRender, 100);
+        }
+      }
+      tryRender();
+    </script>
   </body>
 </html>
