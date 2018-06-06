@@ -3,12 +3,19 @@
   "version": "1.0.0",
   "description": "Entry point and wrapper application for a micro frontends demo",
   "repository": "git@github.com:micro-frontends-demo/wrapper",
-  "author": "Cam Jackson <camjackson89@gmail.com>",
+  "author": "Cam Jackson",
   "license": "MIT",
-  "scripts": {
-    "start": "serve --port 5000"
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "styled-components": "^3.3.2"
   },
-  "devDependencies": {
-    "serve": "^6.5.2"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
