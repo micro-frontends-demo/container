@@ -1,38 +1,22 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import AppHeader from './AppHeader';
+import MicroFrontend from './MicroFrontend';
 
-const tryRender = () => {
-  if (window.renderBrowseMicrofrontend) {
-    window.renderBrowseMicrofrontend('container');
-  } else {
-    setTimeout(tryRender, 100);
-  }
-}
-
-class App extends React.Component {
-  componentDidMount() {
-    tryRender();
-  }
-
-  render() {
-    return (
-      <React.Fragment>
-        <header>
-          <div class="center-column">
-            <h1>🍽 Feed me</h1>
-          </div>
-          <nav>
-            <ol class="center-column">
-              <li><a href="/">Browse restaurants</a></li>
-              <li><a href="/">Surprise me</a></li>
-              <li><a href="/">My Account</a></li>
-            </ol>
-          </nav>
-        </header>
-        <main id="container"></main>
-      </React.Fragment>
-    );
-  }
-}
+const App = () => (
+  <BrowserRouter>
+    <React.Fragment>
+      <AppHeader />
+      <Switch>
+        <Route exact path="/" render={() =>
+          <MicroFrontend name="Browse" src="http://localhost:3000/static/js/bundle.js" />
+        }/>
+        <Route exact path="/my-account" render={() =>
+          <MicroFrontend name="MyAccount" src="http://localhost:3002/static/js/bundle.js" />
+        }/>
+      </Switch>
+    </React.Fragment>
+  </BrowserRouter>
+);
 
 export default App;
