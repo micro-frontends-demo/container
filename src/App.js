@@ -9,10 +9,13 @@ const App = () => (
       <AppHeader />
       <Switch>
         <Route exact path="/" render={() =>
-          <MicroFrontend name="Browse" src="http://localhost:3000/static/js/bundle.js" />
+          <MicroFrontend name="Browse" src="http://localhost:3001/static/js/bundle.js" />
         }/>
+          <Route exact path="/restaurant/:slug" render={() =>
+            <MicroFrontend name="Restaurant" src="http://localhost:3002/static/js/bundle.js" />
+          }/>
         <Route exact path="/my-account" render={() =>
-          <MicroFrontend name="MyAccount" src="http://localhost:3002/static/js/bundle.js" />
+          <MicroFrontend name="MyAccount" src="http://localhost:3003/static/js/bundle.js" />
         }/>
       </Switch>
     </React.Fragment>
