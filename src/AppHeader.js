@@ -10,8 +10,8 @@ const AppHeader = () => (
     <nav>
       <ol className="center-column">
         <li><NavLink to="/">Browse restaurants</NavLink></li>
-        <li><NavLink to="/">Surprise me</NavLink></li>
-        <li><NavLink to="/MyAccount">My Account</NavLink></li>
+        <li><NavLink to="/random">Surprise me</NavLink></li>
+        <li><NavLink to="/my-account">My Account</NavLink></li>
       </ol>
     </nav>
   </header>

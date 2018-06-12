@@ -12,24 +12,25 @@ const attachScriptToPageHead = (name, src) => {
   document.head.appendChild(script);
 };
 
-const renderMicroFrontend = name => {
-  this.renderTimeout = null;
-  if (window[`render${name}`]) {
-    window[`render${name}`](`${name}-container`);
-  } else {
-    this.renderTimeout = setTimeout(() => renderMicroFrontend(name), 100);
-  }
-};
-
 class MicroFrontend extends React.Component {
   componentDidMount() {
     attachScriptToPageHead(this.props.name, this.props.src);
-    renderMicroFrontend(this.props.name);
+    this.renderMicroFrontend();
   }
 
   componentWillUnmount() {
     clearTimeout(this.renderTimeout);
   }
+
+  renderMicroFrontend = () => {
+    const { name, history } = this.props;
+
+    if (window[`render${name}`]) {
+      window[`render${name}`](`${name}-container`, history);
+    } else {
+      this.renderTimeout = setTimeout(this.renderMicroFrontend, 100);
+    }
+  };
 
   render() {
     return (
