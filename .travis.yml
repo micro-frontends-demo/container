@@ -1,0 +1,9 @@
+language: node_js
+
+before_deploy:
+  - yarn build
+
+deploy:
+  provider: s3
+  bucket: demo.microfrontends.com
+  local_dir: build
