@@ -9,3 +9,4 @@ deploy:
   provider: s3
   bucket: demo.microfrontends.com
   local_dir: build
+  skip_cleanup: true
