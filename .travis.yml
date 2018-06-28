@@ -20,7 +20,7 @@ after_deploy:
       aws cloudfront list-distributions |
       jq --raw-output '
       .DistributionList.Items[] |
-      select(.Aliases.Items[0] == "content.demo.microfrontends.com") |
+      select(.Aliases.Items[0] == "demo.microfrontends.com") |
       .Id
       '`
   - "echo invalidating $DISTRIBUTION_ID"
