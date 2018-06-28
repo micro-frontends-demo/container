@@ -2,6 +2,9 @@ language: node_js
 node_js:
   - "8"
 
+before_install:
+  - pip install --upgrade --user awscli
+
 before_deploy:
   - yarn build
 
@@ -10,3 +13,15 @@ deploy:
   bucket: demo.microfrontends.com
   local_dir: build
   skip_cleanup: true
+
+after_deploy:
+  - >
+      DISTRIBUTION_ID=`
+      aws cloudfront list-distributions |
+      jq --raw-output '
+      .DistributionList.Items[] |
+      select(.Aliases.Items[0] == "content.demo.microfrontends.com") |
+      .Id
+      '`
+  - "echo invalidating $DISTRIBUTION_ID"
+  - "aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*'"
