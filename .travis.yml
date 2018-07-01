@@ -7,6 +7,8 @@ before_install:
 
 before_deploy:
   - yarn build
+  - mv build/static/js/*.js build/static/js/bundle.js
+  - mv build/static/js/*.map build/static/js/bundle.js.map
 
 deploy:
   provider: s3

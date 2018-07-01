@@ -6,13 +6,13 @@ import MicroFrontend from './MicroFrontend';
 const environments = {
   development: {
     browse: 'http://localhost:3001/static/js/bundle.js',
-    restaurant: 'http://localhost:3002/static/js/bundle.js',
+    order: 'http://localhost:3002/static/js/bundle.js',
     myAccount: 'http://localhost:3003/static/js/bundle.js',
   },
   production: {
-    browse: 'https://browse.demo.microfrontends.com',
-    restaurant: 'https://restaurant.demo.microfrontends.com',
-    myAccount: 'https://myAccount.demo.microfrontends.com',
+    browse: 'https://browse.demo.microfrontends.com/static/js/bundle.js',
+    order: 'https://restaurant.demo.microfrontends.com/static/js/bundle.js',
+    myAccount: 'https://myAccount.demo.microfrontends.com/static/js/bundle.js',
   },
 };
 const apps = environments[process.env.NODE_ENV];
@@ -21,7 +21,7 @@ const Browse = ({ history }) => (
   <MicroFrontend history={history} src={apps.browse} name="Browse" />
 );
 const Restaurant = ({ history }) => (
-  <MicroFrontend history={history} src={apps.restaurant} name="Restaurant" />
+  <MicroFrontend history={history} src={apps.order} name="Restaurant" />
 );
 const MyAccount = ({ history }) => (
   <MicroFrontend history={history} src={apps.myAccount} name="MyAccount" />
