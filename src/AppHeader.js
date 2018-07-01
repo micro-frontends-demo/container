@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 import './AppHeader.css';
 
 const AppHeader = () => (
@@ -9,9 +9,12 @@ const AppHeader = () => (
     </div>
     <nav>
       <ol className="center-column">
-        <li><NavLink to="/">Browse restaurants</NavLink></li>
-        <li><NavLink to="/random">Surprise me</NavLink></li>
-        <li><NavLink to="/my-account">My Account</NavLink></li>
+        <li>
+          <NavLink to="/">Browse restaurants</NavLink>
+        </li>
+        <li>
+          <NavLink to="/random">Surprise me</NavLink>
+        </li>
       </ol>
     </nav>
   </header>
