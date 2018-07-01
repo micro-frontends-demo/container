@@ -33,10 +33,8 @@ class MicroFrontend extends React.Component {
   };
 
   render() {
-    return (
-      <main id={`${this.props.name}-container`}></main>
-    );
+    return <main id={`${this.props.name}-container`} />;
   }
-};
+}
 
 export default MicroFrontend;
