@@ -11,7 +11,7 @@ const environments = {
   },
   production: {
     browse: 'https://browse.demo.microfrontends.com/static/js/bundle.js',
-    order: 'https://restaurant.demo.microfrontends.com/static/js/bundle.js',
+    order: 'https://order.demo.microfrontends.com/static/js/bundle.js',
     myAccount: 'https://myAccount.demo.microfrontends.com/static/js/bundle.js',
   },
 };
