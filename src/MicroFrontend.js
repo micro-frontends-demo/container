@@ -1,26 +1,28 @@
 import React from 'react';
 
-const attachScriptToPageHead = (name, src) => {
-  const id = `micro-frontend-script-${name}`;
-  if (document.getElementById(id)) {
-    return;
-  }
-
-  const script = document.createElement('script');
-  script.id = id;
-  script.src = src;
-  document.head.appendChild(script);
-};
-
 class MicroFrontend extends React.Component {
   componentDidMount() {
-    attachScriptToPageHead(this.props.name, this.props.src);
+    this.attachScriptToPageHead();
     this.renderMicroFrontend();
   }
 
   componentWillUnmount() {
     clearTimeout(this.renderTimeout);
   }
+
+  attachScriptToPageHead = () => {
+    const { name, src } = this.props;
+    const id = `micro-frontend-script-${name}`;
+
+    if (document.getElementById(id)) {
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.id = id;
+    script.src = src;
+    document.head.appendChild(script);
+  };
 
   renderMicroFrontend = () => {
     const { name, history } = this.props;
