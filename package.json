@@ -1,8 +1,8 @@
 {
-  "name": "@micro-frontends-demo/wrapper",
+  "name": "@micro-frontends-demo/container",
   "version": "1.0.0",
-  "description": "Entry point and wrapper application for a micro frontends demo",
-  "repository": "git@github.com:micro-frontends-demo/wrapper",
+  "description": "Entry point and container application for a micro frontends demo",
+  "repository": "git@github.com:micro-frontends-demo/container",
   "author": "Cam Jackson",
   "license": "MIT",
   "dependencies": {
