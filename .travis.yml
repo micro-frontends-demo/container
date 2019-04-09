@@ -7,23 +7,9 @@ before_install:
 
 before_deploy:
   - yarn build
-  - mv build/static/js/*.js build/static/js/bundle.js
-  - mv build/static/js/*.map build/static/js/bundle.js.map
 
 deploy:
   provider: s3
   bucket: demo.microfrontends.com
   local_dir: build
   skip_cleanup: true
-
-after_deploy:
-  - >
-      DISTRIBUTION_ID=`
-      aws cloudfront list-distributions |
-      jq --raw-output '
-      .DistributionList.Items[] |
-      select(.Aliases.Items[0] == "demo.microfrontends.com") |
-      .Id
-      '`
-  - "echo invalidating $DISTRIBUTION_ID"
-  - "aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*'"

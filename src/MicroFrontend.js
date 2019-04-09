@@ -11,17 +11,21 @@ class MicroFrontend extends React.Component {
   }
 
   attachScriptToPageHead = () => {
-    const { name, src } = this.props;
+    const { name, host } = this.props;
     const id = `micro-frontend-script-${name}`;
 
     if (document.getElementById(id)) {
       return;
     }
 
-    const script = document.createElement('script');
-    script.id = id;
-    script.src = src;
-    document.head.appendChild(script);
+    fetch(`${host}/asset-manifest.json`)
+      .then(res => res.json())
+      .then(manifest => {
+        const script = document.createElement('script');
+        script.id = id;
+        script.src = `${host}${manifest['main.js']}`;
+        document.head.appendChild(script);
+      });
   };
 
   renderMicroFrontend = () => {

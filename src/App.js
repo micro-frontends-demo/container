@@ -3,23 +3,16 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import AppHeader from './AppHeader';
 import MicroFrontend from './MicroFrontend';
 
-const environments = {
-  development: {
-    browse: 'http://localhost:3001/static/js/bundle.js',
-    order: 'http://localhost:3002/static/js/bundle.js',
-  },
-  production: {
-    browse: 'https://browse.demo.microfrontends.com/static/js/bundle.js',
-    order: 'https://order.demo.microfrontends.com/static/js/bundle.js',
-  },
-};
-const apps = environments[process.env.NODE_ENV];
+const {
+  REACT_APP_BROWSE_HOST: browseHost,
+  REACT_APP_RESTAURANT_HOST: restaurantHost,
+} = process.env;
 
 const Browse = ({ history }) => (
-  <MicroFrontend history={history} src={apps.browse} name="Browse" />
+  <MicroFrontend history={history} host={browseHost} name="Browse" />
 );
 const Restaurant = ({ history }) => (
-  <MicroFrontend history={history} src={apps.order} name="Restaurant" />
+  <MicroFrontend history={history} host={restaurantHost} name="Restaurant" />
 );
 const Random = () => (
   <Redirect to={`/restaurant/${Math.floor(Math.random() * 10) + 1}`} />
