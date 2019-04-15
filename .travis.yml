@@ -2,9 +2,6 @@ language: node_js
 node_js:
   - "8"
 
-before_install:
-  - pip install --upgrade --user awscli
-
 before_deploy:
   - yarn build
 
