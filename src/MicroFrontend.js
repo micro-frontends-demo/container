@@ -2,7 +2,7 @@ import React from 'react';
 
 class MicroFrontend extends React.Component {
   componentDidMount() {
-    const { name, host } = this.props;
+    const { name, host, document } = this.props;
     const id = `micro-frontend-script-${name}`;
 
     if (document.getElementById(id)) {
@@ -22,13 +22,13 @@ class MicroFrontend extends React.Component {
   }
 
   componentWillUnmount() {
-    const { name } = this.props;
+    const { name, window } = this.props;
 
     window[`unmount${name}`](`${name}-container`);
   }
 
   renderMicroFrontend = () => {
-    const { name, history } = this.props;
+    const { name, window, history } = this.props;
 
     window[`render${name}`](`${name}-container`, history);
   };
@@ -37,5 +37,10 @@ class MicroFrontend extends React.Component {
     return <main id={`${this.props.name}-container`} />;
   }
 }
+
+MicroFrontend.defaultProps = {
+  document,
+  window,
+};
 
 export default MicroFrontend;
