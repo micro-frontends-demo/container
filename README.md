@@ -1,5 +1,7 @@
 # Feed Me
 
+[![Build Status](https://travis-ci.org/micro-frontends-demo/container.svg?branch=master)](https://travis-ci.org/micro-frontends-demo/container)
+
 Entry point and container application for a micro frontends demo.
 
 This is a React application, which renders a navigation bar, and uses React Router to select a
