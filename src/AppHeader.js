@@ -15,6 +15,9 @@ const AppHeader = () => (
         <li>
           <NavLink to="/random">Surprise me</NavLink>
         </li>
+        <li>
+          <NavLink to="/about">About</NavLink>
+        </li>
       </ol>
     </nav>
   </header>

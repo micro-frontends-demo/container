@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import AppHeader from './AppHeader';
 import MicroFrontend from './MicroFrontend';
+import About from './About';
 
 const {
   REACT_APP_BROWSE_HOST: browseHost,
@@ -33,6 +34,7 @@ const App = () => (
         <Route exact path="/" component={Browse} />
         <Route exact path="/restaurant/:id" component={Restaurant} />
         <Route exact path="/random" render={Random} />
+        <Route exact path="/about" render={About} />
       </Switch>
     </React.Fragment>
   </BrowserRouter>

@@ -36,13 +36,7 @@ header nav ol {
   padding: 0;
   width: 100%;
   display: flex;
-  justify-content: space-between;
-}
-
-@media (min-width: 380px) {
-  header nav ol {
-    justify-content: space-around;
-  }
+  justify-content: space-around;
 }
 
 @media (min-width: 600px) {
