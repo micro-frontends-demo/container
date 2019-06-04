@@ -3,9 +3,9 @@ import React from 'react';
 class MicroFrontend extends React.Component {
   componentDidMount() {
     const { name, host, document } = this.props;
-    const id = `micro-frontend-script-${name}`;
+    const scriptId = `micro-frontend-script-${name}`;
 
-    if (document.getElementById(id)) {
+    if (document.getElementById(scriptId)) {
       this.renderMicroFrontend();
       return;
     }
@@ -14,7 +14,7 @@ class MicroFrontend extends React.Component {
       .then(res => res.json())
       .then(manifest => {
         const script = document.createElement('script');
-        script.id = id;
+        script.id = scriptId;
         script.src = `${host}${manifest['main.js']}`;
         script.onload = this.renderMicroFrontend;
         document.head.appendChild(script);
