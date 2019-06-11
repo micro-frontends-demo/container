@@ -17,13 +17,11 @@ const About = () => (
       independently.
     </p>
     <p>
-      Cam is currently putting the finishing touches on a long-form article on
-      micro frontends, which will explain both the concept, and this particular
-      example website, in great detail. Once it's done, it will be posted on{' '}
-      <a href="https://martinfowler.com">martinfowler.com</a>. So if you'd like
-      to know more, then follow Cam (or{' '}
-      <a href="https://twitter.com/martinfowler/">Martin</a>) on twitter, and
-      you'll be first to see when the article is published!
+      To read more about the technique, including a full explanation of how the
+      code for this demo works, check out the{' '}
+      <a href="https://martinfowler.com/articles/micro-frontends.html">
+        long-form article that Cam wrote for martinfowler.com
+      </a>.
     </p>
     <p>
       If you just want to read the source code for yourself, it's all available
