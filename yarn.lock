@@ -7599,9 +7599,9 @@ react-app-polyfill@^0.2.2:
     raf "3.4.1"
     whatwg-fetch "3.0.0"
 
-react-app-rewire-disable-chunks@^0.0.1:
+react-app-rewire-micro-frontends@^0.0.1:
   version "0.0.1"
-  resolved "https://registry.yarnpkg.com/react-app-rewire-disable-chunks/-/react-app-rewire-disable-chunks-0.0.1.tgz#2f088f19bfe2cfe5429883d82d23819f335cb00d"
+  resolved "https://registry.yarnpkg.com/react-app-rewire-micro-frontends/-/react-app-rewire-micro-frontends-0.0.1.tgz#f5d06ffaee7053e6c8348c9de733c4411f2b2274"
 
 react-app-rewired@^2.1.1:
   version "2.1.1"

@@ -14,6 +14,7 @@
   "dependencies": {
     "react": "^16.4.0",
     "react-app-polyfill": "^0.2.2",
+    "react-app-rewire-micro-frontends": "^0.0.1",
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^2.1.8"
@@ -24,10 +25,9 @@
     "jest-enzyme": "^6.0.2",
     "jest-fetch-mock": "^2.1.2",
     "prettier": "^1.13.5",
-    "react-app-rewire-disable-chunks": "^0.0.1",
     "react-app-rewired": "^2.1.1"
   },
-  "config-overrides-path": "node_modules/react-app-rewire-disable-chunks",
+  "config-overrides-path": "node_modules/react-app-rewire-micro-frontends",
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all"
